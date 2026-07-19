@@ -1,0 +1,24 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "trendytech-sales-daf"
+		},
+		"AzureDataLakeStorage1_ls_accountKey": {
+			"value": ""
+		},
+		"AzureDataLakeStorage1_ls_properties_typeProperties_url": {
+			"value": "https://trendytechstracc.dfs.core.windows.net/"
+		},
+		"AzureKeyVault1_properties_typeProperties_baseUrl": {
+			"value": "https://trendytech-sales-kev.vault.azure.net/"
+		},
+		"trigger1_properties_sales-pipeline_parameters_filename": {
+			"value": "@triggerBody().filename"
+		},
+		"trigger1_properties_typeProperties_scope": {
+			"value": "/subscriptions/60f9dbd8-a1a6-4a24-b0a9-1fc00927737b/resourceGroups/adf-databricks-project/providers/Microsoft.Storage/storageAccounts/trendytechstracc"
+		}
+	}
+}

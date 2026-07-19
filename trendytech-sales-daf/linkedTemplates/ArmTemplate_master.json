@@ -1,0 +1,77 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "trendytech-sales-daf"
+		},
+		"AzureDataLakeStorage1_ls_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage1_ls'"
+		},
+		"AzureDataLakeStorage1_ls_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://trendytechstracc.dfs.core.windows.net/"
+		},
+		"AzureKeyVault1_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://trendytech-sales-kev.vault.azure.net/"
+		},
+		"trigger1_properties_sales-pipeline_parameters_filename": {
+			"type": "string",
+			"defaultValue": "@triggerBody().filename"
+		},
+		"trigger1_properties_typeProperties_scope": {
+			"type": "string",
+			"defaultValue": "/subscriptions/60f9dbd8-a1a6-4a24-b0a9-1fc00927737b/resourceGroups/adf-databricks-project/providers/Microsoft.Storage/storageAccounts/trendytechstracc"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "trendytech-sales-daf_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"AzureDataLakeStorage1_ls_accountKey": {
+						"value": "[parameters('AzureDataLakeStorage1_ls_accountKey')]"
+					},
+					"AzureDataLakeStorage1_ls_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorage1_ls_properties_typeProperties_url')]"
+					},
+					"AzureKeyVault1_properties_typeProperties_baseUrl": {
+						"value": "[parameters('AzureKeyVault1_properties_typeProperties_baseUrl')]"
+					},
+					"trigger1_properties_sales-pipeline_parameters_filename": {
+						"value": "[parameters('trigger1_properties_sales-pipeline_parameters_filename')]"
+					},
+					"trigger1_properties_typeProperties_scope": {
+						"value": "[parameters('trigger1_properties_typeProperties_scope')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}
