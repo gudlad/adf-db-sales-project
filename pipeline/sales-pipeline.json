@@ -15,7 +15,13 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"notebookPath": "/Users/prasad1634@outlook.com/adf-db-sales-project/sales-project"
+					"notebookPath": "/Users/prasad1634@outlook.com/adf-db-sales-project/sales-project",
+					"baseParameters": {
+						"filename": {
+							"value": "@pipeline().parameters.filename",
+							"type": "Expression"
+						}
+					}
 				},
 				"linkedServiceName": {
 					"referenceName": "AzureDatabricks1_ls",
