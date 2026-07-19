@@ -8,6 +8,9 @@
 				"pipelineReference": {
 					"referenceName": "sales-pipeline",
 					"type": "PipelineReference"
+				},
+				"parameters": {
+					"filename": "@triggerBody().filename"
 				}
 			}
 		],
