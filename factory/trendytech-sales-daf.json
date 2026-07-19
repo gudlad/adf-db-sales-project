@@ -1,0 +1,15 @@
+{
+	"name": "trendytech-sales-daf",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Disabled",
+			"editable": true
+		}
+	},
+	"location": "centralindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "61dbebf2-41b0-4886-997b-0b200382558e",
+		"tenantId": "635466a8-44e2-4764-ae19-b1bfb847c6e4"
+	}
+}

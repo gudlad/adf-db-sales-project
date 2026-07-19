@@ -1,0 +1,25 @@
+{
+	"name": "trigger1",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "sales-pipeline",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "BlobEventsTrigger",
+		"typeProperties": {
+			"blobPathBeginsWith": "/sales/blobs/landing",
+			"blobPathEndsWith": "orders.csv",
+			"ignoreEmptyBlobs": true,
+			"scope": "/subscriptions/60f9dbd8-a1a6-4a24-b0a9-1fc00927737b/resourceGroups/adf-databricks-project/providers/Microsoft.Storage/storageAccounts/trendytechstracc",
+			"events": [
+				"Microsoft.Storage.BlobCreated"
+			]
+		}
+	}
+}
