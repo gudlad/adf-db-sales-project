@@ -14,7 +14,7 @@
 		"type": "BlobEventsTrigger",
 		"typeProperties": {
 			"blobPathBeginsWith": "/sales/blobs/landing",
-			"blobPathEndsWith": "orders.csv",
+			"blobPathEndsWith": ".csv",
 			"ignoreEmptyBlobs": true,
 			"scope": "/subscriptions/60f9dbd8-a1a6-4a24-b0a9-1fc00927737b/resourceGroups/adf-databricks-project/providers/Microsoft.Storage/storageAccounts/trendytechstracc",
 			"events": [
