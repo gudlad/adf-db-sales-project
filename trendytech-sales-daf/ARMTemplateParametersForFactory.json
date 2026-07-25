@@ -19,6 +19,16 @@
 		},
 		"trigger1_properties_typeProperties_scope": {
 			"value": "/subscriptions/60f9dbd8-a1a6-4a24-b0a9-1fc00927737b/resourceGroups/adf-databricks-project/providers/Microsoft.Storage/storageAccounts/trendytechstracc"
+		},
+		"AmazonS31_properties_typeProperties_accessKeyId": {
+			"value": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "AzureKeyVault1",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "AccesskeyID"
+			}
 		}
 	}
 }
