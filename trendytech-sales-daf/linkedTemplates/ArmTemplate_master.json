@@ -11,22 +11,6 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage1_ls'"
 		},
-		"AzureDataLakeStorage1_ls_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "https://trendytechstracc.dfs.core.windows.net/"
-		},
-		"AzureKeyVault1_properties_typeProperties_baseUrl": {
-			"type": "string",
-			"defaultValue": "https://trendytech-sales-kev.vault.azure.net/"
-		},
-		"trigger1_properties_sales-pipeline_parameters_filename": {
-			"type": "string",
-			"defaultValue": "@triggerBody().filename"
-		},
-		"trigger1_properties_typeProperties_scope": {
-			"type": "string",
-			"defaultValue": "/subscriptions/60f9dbd8-a1a6-4a24-b0a9-1fc00927737b/resourceGroups/adf-databricks-project/providers/Microsoft.Storage/storageAccounts/trendytechstracc"
-		},
 		"AmazonS31_properties_typeProperties_accessKeyId": {
 			"type": "object",
 			"defaultValue": {
@@ -37,6 +21,34 @@
 				},
 				"secretName": "AccesskeyID"
 			}
+		},
+		"AzureDataLakeStorage1_ls_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://trendytechstracc.dfs.core.windows.net/"
+		},
+		"AzureKeyVault1_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://trendytech-sales-kev.vault.azure.net/"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "trendytechsqlserv.database.windows.net"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "free-sql-db-5673187"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "tt-sql-user"
+		},
+		"trigger1_properties_sales-pipeline_parameters_filename": {
+			"type": "string",
+			"defaultValue": "@triggerBody().filename"
+		},
+		"trigger1_properties_typeProperties_scope": {
+			"type": "string",
+			"defaultValue": "/subscriptions/60f9dbd8-a1a6-4a24-b0a9-1fc00927737b/resourceGroups/adf-databricks-project/providers/Microsoft.Storage/storageAccounts/trendytechstracc"
 		},
 		"containerUri": {
 			"type": "string",
@@ -76,6 +88,15 @@
 					},
 					"AmazonS31_properties_typeProperties_accessKeyId": {
 						"value": "[parameters('AmazonS31_properties_typeProperties_accessKeyId')]"
+					},
+					"AzureSqlDatabase1_properties_typeProperties_server": {
+						"value": "[parameters('AzureSqlDatabase1_properties_typeProperties_server')]"
+					},
+					"AzureSqlDatabase1_properties_typeProperties_database": {
+						"value": "[parameters('AzureSqlDatabase1_properties_typeProperties_database')]"
+					},
+					"AzureSqlDatabase1_properties_typeProperties_userName": {
+						"value": "[parameters('AzureSqlDatabase1_properties_typeProperties_userName')]"
 					},
 					"trigger1_properties_sales-pipeline_parameters_filename": {
 						"value": "[parameters('trigger1_properties_sales-pipeline_parameters_filename')]"
